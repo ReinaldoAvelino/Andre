@@ -9,7 +9,7 @@ https://projecteuler.net/archives
 Documentacao C/C++
 https://www.cplusplus.com
 
-Livro-texto IME
+Pagina-texto IME
 https://www.ime.usp.br/~pf/algoritmos/index.html#C-language
 
 Hacker Rank
