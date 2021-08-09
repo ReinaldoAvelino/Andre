@@ -16,9 +16,9 @@ void imprimir(int n, int v[n]) {
 
 // Recebe um vetor v1 de tamanho n, e inverte-o no vetor v2
 void inverter(int n, int v1[n], int v2[n]) {
-    int j = n;                                   
+    int j = n - 1;                                   
     for (int i = 0; i < n; i++) {
-        v2[i] = v1[j];
+        v2[i] = v1[j];            
         j--;
     }
 }
@@ -61,6 +61,8 @@ int palindromo(int num) { // Vale ate um num numero de 100 digitos
     return 1;
 }
 
+
+/* ------ Modificado -------- */
 void teste() {
     int n = 5;
     int v2[n];
@@ -69,17 +71,26 @@ void teste() {
     imprimir(n, v1);
     imprimir(n, v2);
 }
+/* --------------------------- */
 
 int p4() {
-    int i = 131;
-
-    if (palindromo(i)) {
-        printf("%d eh um numero palidromo. \n", i);
+    // Produto de dois numeros de 3 digitos
+    int maiorProduto = 0;
+    int produto;
+    for (int p = 1; p < 1000; p++) {
+        for (int q = 1; q < 1000; q++) {
+            produto = p*q;
+            if (palindromo(produto)) {
+                if (produto > maiorProduto) maiorProduto = produto;
+            }
+        }
     }
-    else printf("%d n eh um palindromo. \n", i);
+    return maiorProduto;
 }
 
 int main() {
-    teste();
+    //teste();
+    int x = p4();
+    printf("O maior produto eh %d. \n", x);
     return 0;
 }
